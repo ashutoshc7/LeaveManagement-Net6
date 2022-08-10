@@ -9,9 +9,12 @@ using LeaveManagementWeb.Data;
 using AutoMapper;
 using LeaveManagementWeb.Models;
 using LeaveManagementWeb.Contracts;
+using Microsoft.AspNetCore.Authorization;
+using LeaveManagementWeb.Constants;
 
 namespace LeaveManagementWeb.Controllers
 {
+    
     public class LeaveTypesController : Controller
     {
 
@@ -46,7 +49,6 @@ namespace LeaveManagementWeb.Controllers
             var leaveTypeVM = mapper.Map<LeaveTypeVM>(leaveType);
             return View(leaveTypeVM);
         }
-
         // GET: LeaveTypes/Create
         public IActionResult Create()//it is just a form that is returning the view 
         {

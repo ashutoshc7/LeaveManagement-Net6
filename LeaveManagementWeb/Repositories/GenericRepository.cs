@@ -14,7 +14,7 @@ namespace LeaveManagementWeb.Repositories
         }
         public async Task<T> AddAsync(T entity)
         {
-            await context.AddAsync(entity);
+            await context.AddAsync(entity);//This .AddAsync in saying change the entity state of this entity to add it
             await context.SaveChangesAsync();
             return entity;
         }
@@ -22,7 +22,7 @@ namespace LeaveManagementWeb.Repositories
         public async Task DeleteAsync(int id)
         {
             var entity = await GetAsync(id);
-            context.Set<T>().Remove(entity);
+            context.Set<T>().Remove(entity);//so by using Set<T> we are making something generic because we don't know from which table we need tp fetch data or delete data
             await context.SaveChangesAsync();
         }
 

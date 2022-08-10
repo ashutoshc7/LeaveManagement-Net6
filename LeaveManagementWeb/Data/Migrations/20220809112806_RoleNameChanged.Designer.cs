@@ -4,6 +4,7 @@ using LeaveManagementWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeaveManagementWeb.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220809112806_RoleNameChanged")]
+    partial class RoleNameChanged
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,7 +108,7 @@ namespace LeaveManagementWeb.Data.Migrations
                         {
                             Id = "8f63e06a-77eb-473a-ada1-9506d081748c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5047085f-992d-47b1-ada7-c0289d3c7a00",
+                            ConcurrencyStamp = "92d0777b-d8e1-4143-9d8b-9ee2d05810d2",
                             DateJoined = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@test.com",
@@ -115,9 +117,9 @@ namespace LeaveManagementWeb.Data.Migrations
                             Lastname = "Mishra",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@TEST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOlsO9Xm3pUZUDIFjHKjh0luIkKpHa8sVqiD1ha8C+OSeGStgOnl526whkhN6LQX0g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEID3A+dCxh4UL8az9V4ySEmcm/TCI/lM/E4IhMx/YgZuHEJpSEtgLt7D4Bo+pZ0XUQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3b8a01ef-718c-4b96-95f0-deecb2dc2bbb",
+                            SecurityStamp = "ccee63de-3673-4d2a-b35e-5c856cd7936b",
                             TwoFactorEnabled = false,
                             UserName = "admin@test.com"
                         },
@@ -125,7 +127,7 @@ namespace LeaveManagementWeb.Data.Migrations
                         {
                             Id = "266f5b79-ddf9-450b-8f9c-d467162a0aa2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f18ddc74-5dd7-46e2-8e67-c8f579bbbae5",
+                            ConcurrencyStamp = "1dab27e5-fd33-4ad7-b04b-8759d84effdc",
                             DateJoined = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "ashuc@gmail.com",
@@ -134,9 +136,9 @@ namespace LeaveManagementWeb.Data.Migrations
                             Lastname = "Chaudhary",
                             LockoutEnabled = false,
                             NormalizedEmail = "ASHUC@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJHwj21VmKQ53SaCvQEzC89ceYkCuzT+BmAA5TM6TyWbv8B48L+EG5hyAST1Y08tUw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHJaQP/MECRUBEHcbANRs0zOoSPv/7edrQ/D9blNjfyTqVvS+/ZbjBhVml7bl2zYqg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "686d35e8-645d-4556-81fa-8d517c213574",
+                            SecurityStamp = "72d8ddd3-f2c6-4064-9b62-0c50eb70babb",
                             TwoFactorEnabled = false,
                             UserName = "ashuc@gmail.com"
                         });
@@ -229,14 +231,14 @@ namespace LeaveManagementWeb.Data.Migrations
                         new
                         {
                             Id = "266f5b89-def9-450b-8f9c-d467162a0ab2",
-                            ConcurrencyStamp = "cf8c1d95-d004-419c-8e15-a0625d793b62",
+                            ConcurrencyStamp = "c540b14c-1d41-4ab4-b2ed-2606a0be5bf0",
                             Name = "Aministrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "866f4b79-dzf9-450b-8f9c-f467162a0ac2",
-                            ConcurrencyStamp = "d7e90d5c-464b-4ce8-81e0-4242ea538863",
+                            ConcurrencyStamp = "f71697df-d30b-44fc-8846-df1b639ea15b",
                             Name = "User",
                             NormalizedName = "USER"
                         });
