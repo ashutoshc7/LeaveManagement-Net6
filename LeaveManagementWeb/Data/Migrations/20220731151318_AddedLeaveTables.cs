@@ -32,7 +32,7 @@ namespace LeaveManagementWeb.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NumberOfDays = table.Column<int>(type: "int", nullable: false),
-                    LeaveId = table.Column<int>(type: "int", nullable: false),
+                    LeaveTypeId = table.Column<int>(type: "int", nullable: false),
                     EmployeeId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateModified = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -42,7 +42,7 @@ namespace LeaveManagementWeb.Data.Migrations
                     table.PrimaryKey("PK_LeaveAllocation", x => x.Id);
                     table.ForeignKey(
                         name: "FK_LeaveAllocation_LeaveTypes_LeaveId",
-                        column: x => x.LeaveId,
+                        column: x => x.LeaveTypeId,
                         principalTable: "LeaveTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -50,8 +50,8 @@ namespace LeaveManagementWeb.Data.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_LeaveAllocation_LeaveId",
-                table: "LeaveAllocation",
-                column: "LeaveId");
+                table: "LeaveAllocations",
+                column: "LeaveTypeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

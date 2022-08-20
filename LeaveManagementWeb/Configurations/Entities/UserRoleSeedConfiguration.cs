@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace LeaveManagementWeb.Web.Configurations.Entities
+namespace LeaveManagementWeb.Configurations.Entities
 {
-    internal class UserRoleSeedConfiguration : IEntityTypeConfiguration<IdentityUserRole<string>>
+    public class UserRoleSeedConfiguration : IEntityTypeConfiguration<IdentityUserRole<string>>
     {
         public void Configure(EntityTypeBuilder<IdentityUserRole<string>> builder)
         {
@@ -16,7 +16,7 @@ namespace LeaveManagementWeb.Web.Configurations.Entities
                 },
                  new IdentityUserRole<string>
                  {
-                     RoleId = "866f4b79-dzf9-450b-8f9c-f467162a0ac2",
+                     RoleId = "866f4b79-dzf9-850g-8e5n-f467162a0ac2",
                      UserId = "266f5b79-ddf9-450b-8f9c-d467162a0aa2"
                  }
              );

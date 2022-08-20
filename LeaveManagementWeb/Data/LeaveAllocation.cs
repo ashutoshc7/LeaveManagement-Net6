@@ -6,10 +6,12 @@ namespace LeaveManagementWeb.Data
     {
     
         public int NumberOfDays { get; set; }
-        [ForeignKey("LeaveId")]
+        [ForeignKey("LeaveTypeId")]
         public LeaveType LeaveType { get; set; }
-        public int LeaveId { get; set; }
+        public int LeaveTypeId { get; set; }
         public string EmployeeId { get; set; }
+        public int Period { get; set; }//This is a year like 2021 or 2022 (you got these number of days for this year)
+
       
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace LeaveManagementWeb.Web.Configurations.Entities
+namespace LeaveManagementWeb.Configurations.Entities
 {
     public class RoleSeedConfiguration : IEntityTypeConfiguration<IdentityRole>
     {
@@ -18,7 +18,7 @@ namespace LeaveManagementWeb.Web.Configurations.Entities
                 },
                 new IdentityRole
                 {
-                    Id= "866f4b79-dzf9-450b-8f9c-f467162a0ac2",
+                    Id= "866f4b79-dzf9-850g-8e5n-f467162a0ac2",
                     Name=Roles.User,
                     NormalizedName =Roles.User.ToUpper()
                 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LeaveManagementWeb.Data;
 using AutoMapper;
@@ -14,17 +9,20 @@ using LeaveManagementWeb.Constants;
 
 namespace LeaveManagementWeb.Controllers
 {
-    
+    //[Authorize(Roles = Roles.Administrator)]
     public class LeaveTypesController : Controller
     {
-
+        
         public readonly ILeaveTypeRepository LeaveTypeRepository;
 
         private readonly IMapper mapper;
-        public LeaveTypesController(ILeaveTypeRepository LeaveTypeRepository,IMapper mapper)
+        private readonly ILeaveAllocationRepository leaveAllocationRepository;
+
+        public LeaveTypesController(ILeaveTypeRepository LeaveTypeRepository,IMapper mapper,ILeaveAllocationRepository leaveAllocationRepository)
         {
             this.LeaveTypeRepository = LeaveTypeRepository;
             this.mapper = mapper;
+            this.leaveAllocationRepository = leaveAllocationRepository;
         }
 
         // GET: LeaveTypes
@@ -128,6 +126,13 @@ namespace LeaveManagementWeb.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             await LeaveTypeRepository.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult>AllocateLeave(int id)
+        {
+            await leaveAllocationRepository.LeaveAllocation(id);
             return RedirectToAction(nameof(Index));
         }
     }

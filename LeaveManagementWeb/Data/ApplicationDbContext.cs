@@ -1,6 +1,7 @@
-﻿using LeaveManagementWeb.Web.Configurations.Entities;
+﻿using LeaveManagementWeb.Configurations.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using LeaveManagementWeb.Models;
 
 namespace LeaveManagementWeb.Data
 {
@@ -18,6 +19,12 @@ namespace LeaveManagementWeb.Data
             builder.ApplyConfiguration(new UserRoleSeedConfiguration());
         }
         public DbSet<LeaveType> LeaveTypes { get; set; }
-        public DbSet<LeaveAllocation> LeaveAllocation { get; set; }
+        public DbSet<LeaveAllocation> LeaveAllocations { get; set; }
+        //public DbSet<LeaveManagementWeb.Models.LeaveAllocationEditVM>? LeaveAllocationEditVM { get; set; }
+        //public DbSet<LeaveManagementWeb.Models.LeaveAllocationEditVM>? LeaveAllocationEditVM { get; set; }
+        //public DbSet<LeaveManagementWeb.Models.LeaveAllocationEditVM>? LeaveAllocationEditVM { get; set; }
+        //public DbSet<LeaveManagementWeb.Models.EmployeeListVM>? EmployeeListVM { get; set; }
+        //public DbSet<LeaveManagementWeb.Models.EmployeeAllocationVM>? EmployeeAllocationVM { get; set; }
+        //public object LeaveAllocation { get; internal set; }
     }
 }
